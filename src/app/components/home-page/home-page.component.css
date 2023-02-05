@@ -1,0 +1,43 @@
+mat-toolbar{
+    background-color: #252323;
+    color: #f5f1ed;
+}
+
+mat-toolbar span{
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+.wrapper {
+    height: 100vh;
+    background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* text-align: left; */
+  align-items: center;
+  padding: 2em 0 1em 0;
+  
+  }
+  
+  .button {
+    background-color: #a99985;
+    color: #f5f1ed;
+    font-size: 1.6rem;
+    padding: 1em 1em;
+    width: 50%;
+    margin-top: 2em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transform: background-color .3s;
+  }
+  .button:hover {
+    background-color: #6e5c47;
+  }
+  .icon{
+      background-color: transparent;
+      font-size: 2.0rem;
+      margin-right: 0.5em;
+  }

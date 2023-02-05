@@ -1,0 +1,79 @@
+mat-toolbar {
+    background-color: #252323;
+    color: #f5f1ed;
+  }
+  
+ mat-toolbar span {
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+  }
+ 
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2em;
+    font-size: 1.2rem;
+    background-color: #a99985;
+  }
+  .section-box {
+    background-color: white;
+    padding: 1em 0.5em 1em 0;
+    border-radius: 0.5em;
+  }
+
+  .order-data {
+    background-color: white;
+    border-radius: 0.5em;
+    display: flex;
+   flex-direction: column;
+   padding: 1em;
+
+  }
+  .order-data2 {
+
+    padding: 0.5em 0.5em;
+    align-items: baseline;
+    display: flex;
+   justify-content: space around;
+   text-align: left;
+   flex-wrap: wrap;
+  }
+  .order-data label, .order-data2 label {
+    padding: 0.5em;
+  }
+
+  .radio {
+    margin-top: 1em;
+    margin-left: 1em;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .next, .back{
+    background-color: #a99985;
+    color: #f5f1ed;
+    transform: background-color .3s;
+    padding: 1em 1em;
+    margin: 1em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  .next:hover, .back:hover {
+    background-color: #6e5c47;
+  }
+  .error{
+    color: #f44336;
+  }
+  .error-info{
+    font-size: 0.8rem;
+  }
+
