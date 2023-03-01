@@ -1,0 +1,136 @@
+<mat-toolbar>
+    <span>New Order</span>
+</mat-toolbar>
+
+<div class="section">
+    <form class="section-box" [formGroup]="myForm">
+        <div class="order-data">
+            <label for="">Pick your delivery address:</label>
+            <div class="error"
+                *ngIf="myForm.controls['deliveryAddress'].hasError('required')&& myForm.controls['deliveryAddress'].touched">
+                <span class="error-info">Please select your<strong> delivery address!</strong></span>
+            </div>
+            <mat-radio-group aria-label="Select an option" formControlName="deliveryAddress">
+                <mat-radio-button class="radio" value="Poznan, Naramowicka Street">Poznan,
+                    Naramowicka Street
+                    27</mat-radio-button>
+                <mat-radio-button class="radio" value="Poznan, Jackowskiego Street"> Poznan,
+                    Jackowskiego Street
+                    68</mat-radio-button>
+                <mat-radio-button class="radio" value="Poznan, Maltańska Street"> Poznan,
+                    Maltańska Street
+                    28</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="order-data">
+            <label for="">Select a concrete class:</label>
+            <div class="error"
+                *ngIf="myForm.controls['concreteClass'].hasError('required')&& myForm.controls['concreteClass'].touched">
+                <span class="error-info">Please select<strong> concrete class!</strong></span>
+            </div>
+            <mat-radio-group aria-label="Select an option" formControlName="concreteClass">
+                <mat-radio-button class="radio" value="56d C8/10 S3 16mm">56d C8/10 S3 16mm</mat-radio-button>
+                <mat-radio-button class="radio" value="C20/25 S3 16mm">C20/25 S3 16mm</mat-radio-button>
+                <mat-radio-button class="radio" value="C25/30 S3 16mm W8">C25/30 S3 16mm W8</mat-radio-button>
+                <mat-radio-button class="radio" value="C30/37 S3 16mm W8">C30/37 S3 16mm W8</mat-radio-button>
+                <mat-radio-button class="radio" value="C30/37 S3 16mm W10">C30/37 S3 16mm W10</mat-radio-button>
+                <mat-radio-button class="radio" value="C30/37 S3 8mm W8">C30/37 S3 8mm W8</mat-radio-button>
+                <mat-radio-button class="radio" value="C35/45 S3 16mm">C35/45 S3 16mm F150</mat-radio-button>
+                <mat-radio-button class="radio" value="C35/45 S3 8mm W8">C35/45 S3 8mm W8</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Concrete element: </label>
+            <mat-form-field class="col-md-6">
+                <mat-label>choose</mat-label>
+                <mat-select formControlName="concreteElement">
+                    <mat-option *ngFor="let element of concreteElement" [value]="element">
+                        {{element}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['concreteElement'].hasError('required')&&myForm.controls['concreteElement']?.touched">
+                <span class="error-info">Please select<strong> concrete element!</strong></span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Amount (m3): </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label></mat-label>
+                <input matInput formControlName="amount" type="number">
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['amount'].hasError('required')&& myForm.controls['amount'].touched">
+                <span class="error-info">Enter a value from<strong> 0 to 999 m3</strong></span>
+            </div>
+            <div class="error" *ngIf="myForm.controls['amount'].hasError('max')">
+                <span class="error-info">Enter a value from<strong> 0 to 999 m3</strong></span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Unloading time (m3/h): </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label></mat-label>
+                <input matInput formControlName="unloadingTime" type="number">
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['unloadingTime'].hasError('required')&& myForm.controls['unloadingTime'].touched">
+                <span class="error-info"> Enter a value from<strong> 0 to 50 m3/h</strong></span>
+            </div>
+            <div class="error" *ngIf="myForm.controls['unloadingTime'].hasError('max')">
+                <span class="error-info"> Enter a value from<strong> 1 to 50 m3/h</strong></span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Additional information: </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label></mat-label>
+                <textarea matInput formControlName="additionalInfo"></textarea>
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['additionalInfo'].hasError('required')&& myForm.controls['additionalInfo'].touched">
+                <span class="error-info"> Enter additional equipment/machines. In case of no need please enter
+                    'no'.</span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Delivery date: </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label>choose</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="deliveryDate">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['deliveryDate'].hasError('required')&&myForm.controls['deliveryDate'].touched">
+                <span class="error-info">Please select<strong> delivery date!</strong></span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Phone: </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label></mat-label>
+                <input matInput formControlName="telefono">
+            </mat-form-field>
+            <div class="error"
+                *ngIf="myForm.controls['telefono'].hasError('required')&&myForm.controls['telefono'].touched">
+                <span class="error-info">Please enter your phone number</span>
+            </div>
+        </div>
+        <div class="order-data2">
+            <label class="col-md-6">Email address: </label>
+            <mat-form-field class="form-input col-md-6">
+                <mat-label></mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <div class="error" *ngIf="myForm.controls['email'].hasError('required')&& myForm.controls['email'].touched">
+                <span class="error-info">Please enter your email address</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="back" type="button" (click)="goHomePage()">BACK</button>
+            <button (click)="goConfirm()" [disabled]="myForm.invalid" class="next" type="button">NEXT</button>
+        </div>
+    </form>
+</div>

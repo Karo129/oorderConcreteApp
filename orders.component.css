@@ -1,0 +1,39 @@
+mat-toolbar {
+  background-color: #252323;
+  color: #f5f1ed;
+}
+mat-toolbar span {
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+.fa-pencil {
+  margin-right: 0.5em;
+  color: #0000ff;
+}
+.fa-trash-can {
+  color: #f44336;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2em;
+  font-size: 1.2rem;
+  background-color: #a99985;
+}
+.section-box {
+  background-color: white;
+  padding: 1em 0.5em 1em 0;
+  border-radius: 0.5em;
+}
+.pointer {
+  cursor: pointer;
+}
